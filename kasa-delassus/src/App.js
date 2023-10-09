@@ -1,12 +1,8 @@
-import GetData from "./data/GetData";
+import React from "react";
+import Router from "./pages/Router";
 
 function App() {
-  return (
-    <div>
-      <h1>Hello !</h1>
-      <GetData />
-    </div>
-  );
+  return <Router />;
 }
 
 export default App;

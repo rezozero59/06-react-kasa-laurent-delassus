@@ -6,13 +6,13 @@ const GetData = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const fetchData = async () => {
+    async function fetchData() {
       try {
         const response = await fetch("data.json");
 
         if (!response.ok) {
           throw new Error(
-            "Network response was not ok: " + response.statusText
+            "Oops une erreur est survenue... " + response.statusText
           );
         }
 
@@ -23,7 +23,7 @@ const GetData = () => {
       } finally {
         setLoading(false);
       }
-    };
+    }
 
     fetchData();
   }, []);
@@ -38,7 +38,18 @@ const GetData = () => {
 
   console.log(data);
 
-  return <div></div>;
+  return (
+    <div>
+      <h2>
+        {data.map((item) => (
+          <div key={item.id}>
+            <h1>{item.title}</h1>
+            <p>{item.location}</p>
+          </div>
+        ))}
+      </h2>
+    </div>
+  );
 };
 
 export default GetData;
