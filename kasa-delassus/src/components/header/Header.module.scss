@@ -13,6 +13,12 @@ header {
       color: var(--red);
       font-weight: 500;
       font-size: 1.33rem;
+      cursor: pointer;
+
+      a {
+        text-decoration: none;
+        color: var(--red);
+      }
     }
   }
 }
