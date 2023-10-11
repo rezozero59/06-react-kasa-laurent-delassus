@@ -45,6 +45,7 @@ const GetData = () => {
           <div key={item.id}>
             <h1>{item.title}</h1>
             <p>{item.location}</p>
+            <img src={item.cover} alt="appartement" />
           </div>
         ))}
       </h2>

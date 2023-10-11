@@ -1,0 +1,18 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 45px 50px 50px 50px;
+  height: 68px;
+
+  ul {
+    display: flex;
+
+    li {
+      margin-left: 57px;
+      color: var(--red);
+      font-weight: 500;
+      font-size: 1.33rem;
+    }
+  }
+}
