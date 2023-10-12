@@ -43,7 +43,7 @@ const HomeMain = () => {
     <div className="grid-container">
       <div className="galery">
         {data.map((item) => (
-          <div className="item" key={item.id}>
+          <div className="item" key={item.id} appartment={item}>
             <img src={item.cover} alt="appartement" />
             <h3 className="title">{item.title}</h3>
           </div>
