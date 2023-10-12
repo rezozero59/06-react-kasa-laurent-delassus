@@ -2,9 +2,10 @@ import React from "react";
 import "./BannerImage.scss";
 
 function BannerImage() {
+  const bannerTitle = "Chez vous, partout et ailleurs";
   return (
     <div className="banner-container">
-      <h1>Chez vous, partout et ailleurs</h1>
+      <h1>{bannerTitle}</h1>
     </div>
   );
 }

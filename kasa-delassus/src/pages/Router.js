@@ -10,8 +10,8 @@ function Router() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-
       <Route path="/about" element={<About />} />
+      {/* Routes dynamiques product :id */}
       <Route path="*" element={<ErrorPage />} />
     </Routes>
   );
