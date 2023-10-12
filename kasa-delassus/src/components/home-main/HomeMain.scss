@@ -1,5 +1,5 @@
 .grid-container {
-  height: 830px;
+  min-height: 830px;
   background-color: var(--bg-gray);
   border-radius: 25px;
   margin: 0 50px 45px 50px;
@@ -7,19 +7,28 @@
   .galery {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 16px;
+    grid-gap: 50px;
+    padding: 50px;
 
     .item {
       position: relative;
       overflow: hidden;
+      padding-bottom: 100%;
+      background: #eee;
+      border-radius: 10px;
+      cursor: pointer;
 
       img {
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
         height: 100%;
         object-fit: cover;
+        border-radius: 10px;
       }
 
-      .titre {
+      .title {
         position: absolute;
         bottom: 0;
         background: rgba(0, 0, 0, 0.5); // Assombrissement du titre

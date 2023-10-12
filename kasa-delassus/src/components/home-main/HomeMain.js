@@ -45,7 +45,7 @@ const HomeMain = () => {
         {data.map((item) => (
           <div className="item" key={item.id}>
             <img src={item.cover} alt="appartement" />
-            <h3>{item.title}</h3>
+            <h3 className="title">{item.title}</h3>
           </div>
         ))}
       </div>
