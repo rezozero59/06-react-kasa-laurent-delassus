@@ -43,9 +43,8 @@ const GetData = () => {
       <h2>
         {data.map((item) => (
           <div key={item.id}>
-            <h1>{item.title}</h1>
-            <p>{item.location}</p>
             <img src={item.cover} alt="appartement" />
+            <h3>{item.title}</h3>
           </div>
         ))}
       </h2>
