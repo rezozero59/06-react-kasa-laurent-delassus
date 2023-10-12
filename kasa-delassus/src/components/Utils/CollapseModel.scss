@@ -1,7 +1,8 @@
 .collapse-container {
   display: flex;
   flex-direction: column;
-  margin: 50px;
+  margin: 40px 50px 30px 50px;
+  margin-bottom: 30px;
   padding: 0 75px 0 75px;
 
   .collapse-title {
@@ -16,14 +17,26 @@
     justify-content: space-between;
     padding: 10px;
     padding-left: 15px;
+
+    .collapse-icon {
+      cursor: pointer;
+      transition: transform 0.5s ease;
+    }
   }
 
   .collapse-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
     background-color: var(--bg-gray);
     color: var(--red);
     font-size: 1rem;
     font-weight: 400;
     border-radius: 0 0 5px 5px;
+  }
+
+  .collapse-content.open {
+    max-height: 500px;
     padding: 20px;
   }
 }
