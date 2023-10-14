@@ -1,56 +1,28 @@
 import "./HomeMain.scss";
-import React, { useState, useEffect } from "react";
 
-const HomeMain = () => {
-  const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+import Usefetch from "../../hooks/Usefetch";
 
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const response = await fetch("data.json");
-
-        if (!response.ok) {
-          throw new Error(
-            "Oops une erreur est survenue... " + response.statusText
-          );
-        }
-
-        const data = await response.json();
-        setData(data);
-      } catch (error) {
-        setError(error);
-      } finally {
-        setLoading(false);
-      }
-    }
-
-    fetchData();
-  }, []);
-
-  if (loading) {
-    return <p>Loading...</p>;
-  }
-
-  if (error) {
-    return <p>Error: {error.message}</p>;
-  }
-
-  console.log(data);
+function HomeMain() {
+  const { data, loading, error } = Usefetch();
 
   return (
     <div className="grid-container">
       <div className="galery">
-        {data.map((item) => (
-          <div className="item" key={item.id} appartment={item}>
-            <img src={item.cover} alt="appartement" />
-            <h3 className="title">{item.title}</h3>
-          </div>
-        ))}
+        {loading ? (
+          <p>Loading...</p>
+        ) : error ? (
+          <p>Error: {error.message}</p>
+        ) : (
+          data.map((item) => (
+            <div className="item" key={item.id} appartment={item}>
+              <img src={item.cover} alt="appartement" />
+              <h3 className="title">{item.title}</h3>
+            </div>
+          ))
+        )}
       </div>
     </div>
   );
-};
+}
 
 export default HomeMain;
