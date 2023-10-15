@@ -4,6 +4,7 @@ import Usefetch from "../../hooks/Usefetch";
 
 function HomeMain() {
   const { data, loading, error } = Usefetch();
+  console.log(data);
 
   return (
     <div className="grid-container">
