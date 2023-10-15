@@ -1,26 +1,18 @@
 import "./HomeMain.scss";
+import { Link } from "react-router-dom";
 
-import Usefetch from "../../hooks/Usefetch";
-
-function HomeMain() {
-  const { data, loading, error } = Usefetch();
-  console.log(data);
-
+function HomeMain({ appartments }) {
   return (
     <div className="grid-container">
       <div className="galery">
-        {loading ? (
-          <p>Loading...</p>
-        ) : error ? (
-          <p>Error: {error.message}</p>
-        ) : (
-          data.map((item) => (
-            <div className="item" key={item.id} appartment={item}>
+        {appartments.map((item) => (
+          <Link to={`/appartement/${item.id}`} key={item.id}>
+            <div className="item" appartment={item}>
               <img src={item.cover} alt="appartement" />
               <h3 className="title">{item.title}</h3>
             </div>
-          ))
-        )}
+          </Link>
+        ))}
       </div>
     </div>
   );

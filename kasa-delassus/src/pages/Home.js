@@ -2,11 +2,11 @@ import React from "react";
 import BannerImage from "../components/Banner/BannerImage";
 import HomeMain from "../components/home-main/HomeMain";
 
-function Home() {
+function Home({ appartments }) {
   return (
     <>
       <BannerImage />
-      <HomeMain />
+      <HomeMain appartments={appartments} />
     </>
   );
 }
