@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import "./Product.scss";
 import StarsRating from "../components/Utils/StarsRating";
 import CollapseModel from "../components/Utils/CollapseModel";
+import SlideShow from "../components/Utils/SlideShow";
 
 const Product = ({ appartments }) => {
   const { id } = useParams();
@@ -27,7 +28,7 @@ const Product = ({ appartments }) => {
 
   return (
     <div className="product-container">
-      <img src={appart.cover} alt="appartement" className="slide-show" />
+      <SlideShow images={appart.pictures} />
       <div className="information-container">
         <div className="line-one">
           <div className="title-location">
