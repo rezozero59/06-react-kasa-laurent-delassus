@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./Product.scss";
+import StarsRating from "../components/Utils/StarsRating";
 
 const Product = ({ appartments }) => {
   const { id } = useParams();
@@ -16,9 +17,8 @@ const Product = ({ appartments }) => {
     return <p>Appartement non trouvé</p>;
   }
   const [firstName, lastName] = appart.host.name.split(" ");
-
-  console.log(appart);
-  // (ici le code JSX pour afficher les détails de l'appartement)
+  const starActive = "/star-active.png";
+  const starInactive = "/star-inactive.png";
 
   return (
     <div className="product-container">
@@ -46,7 +46,13 @@ const Product = ({ appartments }) => {
               </button>
             ))}
           </div>
-          <div className="ratings-container"></div>
+          <div className="ratings-container">
+            <StarsRating
+              rating={appart.rating}
+              activeStar={starActive}
+              inactiveStar={starInactive}
+            />
+          </div>
         </div>
         <div className="line-three"></div>
       </div>

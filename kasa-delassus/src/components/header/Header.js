@@ -2,7 +2,7 @@ import React from "react";
 import "./Header.module.scss";
 import { NavLink } from "react-router-dom";
 
-function Header(props) {
+function Header() {
   return (
     <header className="headerContainer">
       <img src="./logo.png" alt="logo Kasa" />
