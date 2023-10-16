@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./Product.scss";
 import StarsRating from "../components/Utils/StarsRating";
+import CollapseModel from "../components/Utils/CollapseModel";
 
 const Product = ({ appartments }) => {
   const { id } = useParams();
@@ -19,6 +20,10 @@ const Product = ({ appartments }) => {
   const [firstName, lastName] = appart.host.name.split(" ");
   const starActive = "/star-active.png";
   const starInactive = "/star-inactive.png";
+
+  const equipmentList = appart.equipments.map((equipment, index) => (
+    <li key={index}>{equipment}</li>
+  ));
 
   return (
     <div className="product-container">
@@ -54,7 +59,14 @@ const Product = ({ appartments }) => {
             />
           </div>
         </div>
-        <div className="line-three"></div>
+        <div className="line-three">
+          <div className="description">
+            <CollapseModel title={"Description"} txt={appart.description} />
+          </div>
+          <div className="equipments">
+            <CollapseModel title={"Équipements"} txt={equipmentList} />
+          </div>
+        </div>
       </div>
     </div>
   );

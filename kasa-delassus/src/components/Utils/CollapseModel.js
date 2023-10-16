@@ -8,13 +8,15 @@ function CollapseModel({ title, txt }) {
     setIsOpen(!isOpen);
   };
 
+  const arrowUp = "./arrow-up.png";
+
   return (
     <div className="collapse-container">
       <div className="collapse-title">
         <h3>{title}</h3>
         <div className="collapse-icon">
           <img
-            src="./arrow-up.png"
+            src={arrowUp}
             alt="menu collapse"
             onClick={toggleCollapse}
             style={{ transform: isOpen ? "rotate(180deg)" : "rotate(0deg)" }}

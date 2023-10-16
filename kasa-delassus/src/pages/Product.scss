@@ -67,6 +67,19 @@
       }
     }
     .line-three {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+      line-height: 1.5;
+
+      .description {
+        flex: 1;
+      }
+      .equipments {
+        flex: 1;
+        list-style: none;
+      }
     }
   }
 }
