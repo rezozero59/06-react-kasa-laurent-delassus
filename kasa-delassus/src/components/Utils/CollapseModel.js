@@ -2,13 +2,11 @@ import React from "react";
 import "./CollapseModel.scss";
 import { useState } from "react";
 
-function CollapseModel({ title, txt }) {
+function CollapseModel({ title, txt, arrowUp }) {
   const [isOpen, setIsOpen] = useState(false);
   const toggleCollapse = () => {
     setIsOpen(!isOpen);
   };
-
-  const arrowUp = "./arrow-up.png";
 
   return (
     <div className="collapse-container">

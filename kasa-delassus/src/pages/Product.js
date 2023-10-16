@@ -61,10 +61,18 @@ const Product = ({ appartments }) => {
         </div>
         <div className="line-three">
           <div className="description">
-            <CollapseModel title={"Description"} txt={appart.description} />
+            <CollapseModel
+              title={"Description"}
+              txt={appart.description}
+              arrowUp={"/arrow-up.png"}
+            />
           </div>
           <div className="equipments">
-            <CollapseModel title={"Équipements"} txt={equipmentList} />
+            <CollapseModel
+              title={"Équipements"}
+              txt={equipmentList}
+              arrowUp={"/arrow-up.png"}
+            />
           </div>
         </div>
       </div>
