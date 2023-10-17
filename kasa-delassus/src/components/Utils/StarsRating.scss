@@ -1,0 +1,9 @@
+.star {
+  img {
+    height: 30px;
+
+    @media (max-width: 768px) {
+      height: 25px;
+    }
+  }
+}

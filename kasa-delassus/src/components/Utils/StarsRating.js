@@ -1,4 +1,5 @@
 import React from "react";
+import "./StarsRating.scss";
 
 const StarsRating = ({ rating, activeStar, inactiveStar }) => {
   const totalStars = 5;
@@ -12,7 +13,7 @@ const StarsRating = ({ rating, activeStar, inactiveStar }) => {
     }
   }
 
-  return <div>{stars}</div>;
+  return <div className="star">{stars}</div>;
 };
 
 export default StarsRating;

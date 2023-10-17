@@ -37,11 +37,20 @@ const Product = ({ appartments }) => {
         right={slideShowRightArows}
       />
       <div className="information-container">
-        <div className="line-one">
+        <div className="title-tags-container">
           <div className="title-location">
             <h3>{appart.title}</h3>
             <p>{appart.location}</p>
+            <div className="tags-container">
+              {appart.tags.map((tag, index) => (
+                <button key={index} className="tag">
+                  {tag}
+                </button>
+              ))}
+            </div>
           </div>
+        </div>
+        <div className="host-rating-container">
           <div className="host">
             <p>
               {firstName}
@@ -49,15 +58,6 @@ const Product = ({ appartments }) => {
               {lastName}
             </p>
             <img src={appart.host.picture} alt="nom du loueur" />
-          </div>
-        </div>
-        <div className="line-two">
-          <div className="tags-container">
-            {appart.tags.map((tag, index) => (
-              <button key={index} className="tag">
-                {tag}
-              </button>
-            ))}
           </div>
           <div className="ratings-container">
             <StarsRating
@@ -67,21 +67,21 @@ const Product = ({ appartments }) => {
             />
           </div>
         </div>
-        <div className="line-three">
-          <div className="description">
-            <CollapseModel
-              title={"Description"}
-              txt={appart.description}
-              arrowUp={"/arrow-up.png"}
-            />
-          </div>
-          <div className="equipments">
-            <CollapseModel
-              title={"Équipements"}
-              txt={equipmentList}
-              arrowUp={"/arrow-up.png"}
-            />
-          </div>
+      </div>
+      <div className="line-three">
+        <div className="description">
+          <CollapseModel
+            title={"Description"}
+            txt={appart.description}
+            arrowUp={"/arrow-up.png"}
+          />
+        </div>
+        <div className="equipments">
+          <CollapseModel
+            title={"Équipements"}
+            txt={equipmentList}
+            arrowUp={"/arrow-up.png"}
+          />
         </div>
       </div>
     </div>
