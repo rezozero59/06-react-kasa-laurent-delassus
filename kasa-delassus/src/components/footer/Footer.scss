@@ -5,6 +5,10 @@
   align-items: center;
   justify-content: center;
 
+  @media (max-width: 768px) {
+    margin-top: 25px;
+  }
+
   .footer-content {
     height: 100%;
     display: flex;
