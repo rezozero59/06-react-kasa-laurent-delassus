@@ -1,7 +1,7 @@
 // SlideShow.js
 import React, { useState } from "react";
 
-function SlideShow({ images }) {
+function SlideShow({ images, left, right }) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const handleNext = () => {
@@ -21,7 +21,7 @@ function SlideShow({ images }) {
           onClick={handlePrev}
           className="slide-show-arrow slide-show-arrow-left"
         >
-          ←
+          <img src={left} alt="précédent" />
         </button>
         <img
           src={images[currentIndex]}
@@ -32,7 +32,7 @@ function SlideShow({ images }) {
           onClick={handleNext}
           className="slide-show-arrow slide-show-arrow-right"
         >
-          →
+          <img src={right} alt="suivant" />
         </button>
         <div className="slide-show-index">
           {currentIndex + 1}/{images.length}

@@ -5,6 +5,19 @@ header {
   margin: 45px 50px 50px 50px;
   height: 68px;
 
+  @media (max-width: 768px) {
+    height: 45px;
+    margin: 20px 20px 25px 20px;
+  }
+
+  img {
+    height: 68px;
+
+    @media (max-width: 768px) {
+      height: 45px;
+    }
+  }
+
   ul {
     display: flex;
 
@@ -14,6 +27,11 @@ header {
       font-weight: 500;
       font-size: 1.33rem;
       cursor: pointer;
+
+      @media (max-width: 768px) {
+        margin-left: 30px;
+        font-size: 0.7rem;
+      }
 
       a {
         text-decoration: none;

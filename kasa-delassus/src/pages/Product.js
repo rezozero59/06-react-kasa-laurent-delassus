@@ -26,9 +26,16 @@ const Product = ({ appartments }) => {
     <li key={index}>{equipment}</li>
   ));
 
+  const slideShowLeftArows = "/left-arrow.png";
+  const slideShowRightArows = "/right-arrow.png";
+
   return (
     <div className="product-container">
-      <SlideShow images={appart.pictures} />
+      <SlideShow
+        images={appart.pictures}
+        left={slideShowLeftArows}
+        right={slideShowRightArows}
+      />
       <div className="information-container">
         <div className="line-one">
           <div className="title-location">

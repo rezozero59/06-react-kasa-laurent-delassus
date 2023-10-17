@@ -16,6 +16,8 @@ function Router({ appartments }) {
         path="/appartement/:id"
         element={<Product appartments={appartments} />}
       />
+      <Route path="/appartement/*" element={<ErrorPage />} />
+      <Route path="/*" element={<ErrorPage />} />
       <Route path="*" element={<ErrorPage />} />
     </Routes>
   );
