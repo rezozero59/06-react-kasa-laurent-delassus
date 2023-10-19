@@ -31,13 +31,18 @@
         background: none;
 
         border: none;
-        font-size: 2em;
+
         padding: 10px;
 
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
         z-index: 2;
+
+        @media (max-width: 768px) {
+          height: 40px;
+          width: 40px;
+        }
       }
       .slide-show-arrow-left {
         left: 10px;

@@ -36,6 +36,9 @@ header {
       a {
         text-decoration: none;
         color: var(--red);
+        &.active {
+          color: green;
+        }
       }
     }
   }

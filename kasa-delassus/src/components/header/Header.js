@@ -8,14 +8,7 @@ function Header() {
       <img src="./logo.png" alt="logo Kasa" className="logo" />
       <ul className="menu">
         <li>
-          <NavLink
-            to="/"
-            className={({ isActive, isPending }) =>
-              isPending ? "pending" : isActive ? "active" : ""
-            }
-          >
-            Accueil
-          </NavLink>
+          <NavLink to="/">Accueil</NavLink>
         </li>
 
         <li>
