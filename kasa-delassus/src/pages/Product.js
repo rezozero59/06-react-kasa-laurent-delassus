@@ -5,24 +5,36 @@ import StarsRating from "../components/Utils/StarsRating";
 import CollapseModel from "../components/Utils/CollapseModel";
 import SlideShow from "../components/Utils/SlideShow";
 
-const Product = ({ appartments }) => {
+const Product = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-
   const [appart, setAppart] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const foundAppartment = appartments.find((a) => a.id === id);
-    if (!foundAppartment) {
-      navigate("/appartement/*");
-      return;
-    }
-    setAppart(foundAppartment);
-  }, [id, appartments, navigate]);
-
-  if (!appart) {
-    return <p>Appartement non trouvé</p>;
+    fetch("/data.json")
+      .then((response) => response.json())
+      .then((data) => {
+        const foundAppart = data.find((element) => element.id === id);
+        if (!foundAppart) {
+          navigate("/*", {
+            state: { message: "Failed to find hosting id" },
+          });
+        } else {
+          setAppart(foundAppart);
+          setIsLoading(false);
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+        navigate("/*", { state: { message: "Failed to load data" } });
+      });
+  }, [id, navigate]);
+  // isLoading empeche d'afficher des erreurs dans la console en attendant la fin du fetch
+  if (isLoading) {
+    return <div>Loading ....</div>;
   }
+
   const [firstName, lastName] = appart.host.name.split(" ");
   const starActive = "/star-active.png";
   const starInactive = "/star-inactive.png";
