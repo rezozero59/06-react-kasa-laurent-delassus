@@ -6,6 +6,7 @@ function Home({ appartments }) {
   return (
     <>
       <BannerImage />
+
       <HomeMain appartments={appartments} />
     </>
   );

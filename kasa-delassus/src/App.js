@@ -1,9 +1,11 @@
 import React from "react";
-import Router from "./pages/Router";
+
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import "./App.scss";
 import Usefetch from "./hooks/Usefetch";
+
+import Router from "./Router";
 
 function App() {
   const { data, loading, error } = Usefetch();

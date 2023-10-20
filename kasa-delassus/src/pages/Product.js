@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import "./Product.scss";
 import StarsRating from "../components/Utils/StarsRating";
 import CollapseModel from "../components/Utils/CollapseModel";
@@ -7,13 +7,18 @@ import SlideShow from "../components/Utils/SlideShow";
 
 const Product = ({ appartments }) => {
   const { id } = useParams();
+  const navigate = useNavigate();
+
   const [appart, setAppart] = useState(null);
 
   useEffect(() => {
-    // Trouver l'appartement avec l'ID correspondant
     const foundAppartment = appartments.find((a) => a.id === id);
+    if (!foundAppartment) {
+      navigate("/appartement/*");
+      return;
+    }
     setAppart(foundAppartment);
-  }, [id, appartments]);
+  }, [id, appartments, navigate]);
 
   if (!appart) {
     return <p>Appartement non trouvé</p>;

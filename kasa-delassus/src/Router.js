@@ -1,16 +1,21 @@
 import React from "react";
 
-import { Routes, Route } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
-import Home from "./Home";
-import About from "./About";
-import ErrorPage from "./ErrorPage";
-import Product from "./Product";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import ErrorPage from "./pages/ErrorPage";
+import Product from "./pages/Product";
 
 function Router({ appartments }) {
   return (
     <Routes>
-      <Route path="/" element={<Home appartments={appartments} />} />
+      <Route
+        path="/"
+        element={
+          <Home appartments={appartments} errorElement={<ErrorPage />} />
+        }
+      />
       <Route path="/about" element={<About />} />
       <Route
         path="/appartement/:id"
@@ -18,9 +23,7 @@ function Router({ appartments }) {
       />
       <Route path="/appartement/*" element={<ErrorPage />} />
       <Route path="/*" element={<ErrorPage />} />
-      <Route path="*" element={<ErrorPage />} />
     </Routes>
   );
 }
-
 export default Router;
