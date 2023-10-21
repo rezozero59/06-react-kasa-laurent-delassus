@@ -1,22 +1,13 @@
 import "./HomeMain.scss";
 import { Link } from "react-router-dom";
 
-import { useEffect } from "react";
-import { useState } from "react";
+import useFetch from "../../hooks/usefetch";
 
 function HomeMain() {
-  const [data, setData] = useState([]);
+  const { data, loading, error } = useFetch("/data.json");
 
-  useEffect(() => {
-    fetch("/data.json")
-      .then((response) => response.json())
-      .then((data) => {
-        setData(data);
-      })
-      .catch((err) => {
-        console.log(err.message);
-      });
-  }, []);
+  if (loading) return <div>Loading ...</div>;
+  if (error) return <div>Error: {error}</div>;
 
   return (
     <div className="grid-container">

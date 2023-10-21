@@ -1,39 +1,19 @@
-import React, { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import React from "react";
+import { useParams } from "react-router-dom";
 import "./Product.scss";
 import StarsRating from "../components/Utils/StarsRating";
 import CollapseModel from "../components/Utils/CollapseModel";
 import SlideShow from "../components/Utils/SlideShow";
+import useFetch from "../hooks/usefetch";
 
 const Product = () => {
   const { id } = useParams();
-  const navigate = useNavigate();
-  const [appart, setAppart] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
+  const { data, loading, error } = useFetch("/data.json");
 
-  useEffect(() => {
-    fetch("/data.json")
-      .then((response) => response.json())
-      .then((data) => {
-        const foundAppart = data.find((element) => element.id === id);
-        if (!foundAppart) {
-          navigate("/*", {
-            state: { message: "Failed to find hosting id" },
-          });
-        } else {
-          setAppart(foundAppart);
-          setIsLoading(false);
-        }
-      })
-      .catch((error) => {
-        console.error(error);
-        navigate("/*", { state: { message: "Failed to load data" } });
-      });
-  }, [id, navigate]);
-  // isLoading empeche d'afficher des erreurs dans la console en attendant la fin du fetch
-  if (isLoading) {
-    return <div>Loading ....</div>;
-  }
+  const appart = data?.find((element) => element.id === id);
+  if (loading) return <div>Loading ...</div>;
+  if (error) return <div>Error: {error}</div>;
+  if (!appart) return <div>Appartement non trouvé</div>;
 
   const [firstName, lastName] = appart.host.name.split(" ");
   const starActive = "/star-active.png";

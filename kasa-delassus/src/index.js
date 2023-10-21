@@ -13,9 +13,7 @@ root.render(
       <div className="app-container">
         <Header />
         <Router />
-        <div className="footer">
-          <Footer />
-        </div>
+        <Footer />
       </div>
     </BrowserRouter>
   </React.StrictMode>
