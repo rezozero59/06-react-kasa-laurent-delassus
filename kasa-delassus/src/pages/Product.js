@@ -5,6 +5,7 @@ import StarsRating from "../components/Utils/StarsRating";
 import CollapseModel from "../components/Utils/CollapseModel";
 import SlideShow from "../components/Utils/SlideShow";
 import useFetch from "../hooks/usefetch";
+import ErrorPage from "./ErrorPage";
 
 const Product = () => {
   const { id } = useParams();
@@ -13,7 +14,7 @@ const Product = () => {
   const appart = data?.find((element) => element.id === id);
   if (loading) return <div>Loading ...</div>;
   if (error) return <div>Error: {error}</div>;
-  if (!appart) return <div>Appartement non trouvé</div>;
+  if (!appart) return <ErrorPage />;
 
   const [firstName, lastName] = appart.host.name.split(" ");
   const starActive = "/star-active.png";
