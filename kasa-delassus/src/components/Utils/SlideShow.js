@@ -1,17 +1,26 @@
-// SlideShow.js
 import React, { useState } from "react";
+import "./SlideShow.scss";
 
 function SlideShow({ images, left, right }) {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isFading, setIsFading] = useState(false);
 
   const handleNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    setIsFading(true);
+    setTimeout(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+      setIsFading(false);
+    }, 200); // 200ms correspond au temps de la transition
   };
 
   const handlePrev = () => {
-    setCurrentIndex(
-      (prevIndex) => (prevIndex - 1 + images.length) % images.length
-    );
+    setIsFading(true);
+    setTimeout(() => {
+      setCurrentIndex(
+        (prevIndex) => (prevIndex - 1 + images.length) % images.length
+      );
+      setIsFading(false);
+    }, 200);
   };
 
   return (
@@ -26,7 +35,7 @@ function SlideShow({ images, left, right }) {
         <img
           src={images[currentIndex]}
           alt={`Slide ${currentIndex}`}
-          className="slide-show-image"
+          className={`slide-show-image ${isFading ? "fading" : ""}`}
         />
         <button
           onClick={handleNext}

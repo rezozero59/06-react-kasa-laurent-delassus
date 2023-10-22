@@ -1,0 +1,8 @@
+.slide-show-image {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.slide-show-image.fading {
+  opacity: 0;
+}

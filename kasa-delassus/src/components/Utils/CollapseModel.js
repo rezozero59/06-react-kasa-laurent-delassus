@@ -14,15 +14,17 @@ function CollapseModel({ title, txt, arrowUp }) {
         <h3>{title}</h3>
         <div className="collapse-icon">
           <img
+            className={isOpen ? "rotate" : ""}
             src={arrowUp}
             alt="menu collapse"
             onClick={toggleCollapse}
-            style={{ transform: isOpen ? "rotate(180deg)" : "rotate(0deg)" }}
           />
         </div>
       </div>
-      <div className={`collapse-content ${isOpen ? "open" : ""}`}>
-        <p>{txt}</p>
+      <div className="content-wrapper">
+        <div className={`collapse-content ${isOpen ? "open" : ""}`}>
+          <p>{txt}</p>
+        </div>
       </div>
     </div>
   );
