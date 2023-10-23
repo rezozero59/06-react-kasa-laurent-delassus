@@ -1,5 +1,5 @@
 import React from "react";
-import CollapseModel from "../Utils/CollapseModel";
+import CollapseModel from "../../Utils/CollapseModel";
 import "../../pages/Product.scss";
 
 function ProductCollapses({ appart }) {

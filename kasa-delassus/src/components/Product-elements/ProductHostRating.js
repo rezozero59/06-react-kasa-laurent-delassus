@@ -1,11 +1,9 @@
 import React from "react";
-import StarsRating from "../Utils/StarsRating";
+import StarsRating from "../../Utils/StarsRating";
 import "../../pages/Product.scss";
 
 function ProductHostRating({ appart }) {
   const [firstName, lastName] = appart.host.name.split(" ");
-  const starActive = "/star-active.png";
-  const starInactive = "/star-inactive.png";
 
   return (
     <div className="host-rating-container">
@@ -20,8 +18,8 @@ function ProductHostRating({ appart }) {
       <div className="ratings-container">
         <StarsRating
           rating={appart.rating}
-          activeStar={starActive}
-          inactiveStar={starInactive}
+          // activeStar={starActive}
+          // inactiveStar={starInactive}
         />
       </div>
     </div>

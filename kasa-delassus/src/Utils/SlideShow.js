@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import "./SlideShow.scss";
+import left from "../assets/images/utils/left-arrow.png";
+import right from "../assets/images/utils/right-arrow.png";
 
-function SlideShow({ images, left, right }) {
+function SlideShow({ images }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isFading, setIsFading] = useState(false);
 
@@ -10,7 +12,7 @@ function SlideShow({ images, left, right }) {
     setTimeout(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
       setIsFading(false);
-    }, 200); // 200ms correspond au temps de la transition
+    }, 200);
   };
 
   const handlePrev = () => {

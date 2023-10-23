@@ -1,8 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import "./Product.scss";
-
-import SlideShow from "../components/Utils/SlideShow";
+import SlideShow from "../Utils/SlideShow";
 import useFetch from "../hooks/usefetch";
 import ErrorPage from "./ErrorPage";
 import ProductCollapses from "../components/Product-elements/ProductCollapses";
@@ -18,16 +17,9 @@ const Product = () => {
   if (error) return <div>Error: {error}</div>;
   if (!appart) return <ErrorPage />;
 
-  const slideShowLeftArows = "/left-arrow.png";
-  const slideShowRightArows = "/right-arrow.png";
-
   return (
     <div className="product-container">
-      <SlideShow
-        images={appart.pictures}
-        left={slideShowLeftArows}
-        right={slideShowRightArows}
-      />
+      <SlideShow images={appart.pictures} />
       <div className="information-container">
         <ProductTitleTags className="title-tags-container" appart={appart} />
         <ProductHostRating className="host-rating-container" appart={appart} />

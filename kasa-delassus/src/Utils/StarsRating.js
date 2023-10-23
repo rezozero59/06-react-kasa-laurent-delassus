@@ -1,7 +1,9 @@
 import React from "react";
 import "./StarsRating.scss";
+import activeStar from "../assets/images/utils/star-active.png";
+import inactiveStar from "../assets/images/utils/star-inactive.png";
 
-const StarsRating = ({ rating, activeStar, inactiveStar }) => {
+const StarsRating = ({ rating }) => {
   const totalStars = 5;
   let stars = [];
 

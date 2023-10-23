@@ -1,8 +1,9 @@
 import React from "react";
 import "./CollapseModel.scss";
+import arrow from "../assets/images/utils/arrow-up.png";
 import { useState } from "react";
 
-function CollapseModel({ title, txt, arrowUp }) {
+function CollapseModel({ title, txt }) {
   const [isOpen, setIsOpen] = useState(false);
   const toggleCollapse = () => {
     setIsOpen(!isOpen);
@@ -15,7 +16,7 @@ function CollapseModel({ title, txt, arrowUp }) {
         <div className="collapse-icon">
           <img
             className={isOpen ? "rotate" : ""}
-            src={arrowUp}
+            src={arrow}
             alt="menu collapse"
             onClick={toggleCollapse}
           />
