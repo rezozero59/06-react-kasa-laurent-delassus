@@ -1,1 +1,27 @@
+@mixin mobile {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
 
+@mixin center-absolute {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin adaptive-image($default-height, $mobile-height) {
+  height: $default-height;
+
+  @include mobile {
+    height: $mobile-height;
+  }
+}
+
+@mixin flexbox($direction: row, $justify: center, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}

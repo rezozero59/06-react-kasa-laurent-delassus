@@ -6,6 +6,11 @@
 body {
   font-family: "Montserrat", sans-serif;
   background-color: white;
+
+  .app-container {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 ul {
