@@ -52,7 +52,7 @@ function SlideShow({ images }) {
           </button>
         )}
         <div className="slide-show-index">
-          {showArrows && currentIndex + 1}/{images.length}
+          {showArrows && currentIndex + 1}/{showArrows && images.length}
         </div>
       </div>
     </div>
