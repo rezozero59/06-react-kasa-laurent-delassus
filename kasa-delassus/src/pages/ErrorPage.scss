@@ -1,3 +1,5 @@
+@import "../assets/styles/mixins.scss";
+
 .error-container {
   min-height: 70vh;
   display: flex;
@@ -10,7 +12,7 @@
     font-size: 16rem;
     font-weight: 700;
 
-    @media (max-width: 768px) {
+    @include mobile {
       font-size: 10rem;
     }
   }
@@ -18,7 +20,7 @@
     font-size: 2rem;
     font-weight: 400;
 
-    @media (max-width: 768px) {
+    @include mobile {
       font-size: 1.5rem;
       width: 60%;
       text-align: center;
@@ -27,7 +29,7 @@
   a {
     color: var(--red);
   }
-  @media (max-width: 768px) {
+  @include mobile {
     margin-bottom: 30px;
   }
 }

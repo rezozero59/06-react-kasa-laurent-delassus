@@ -1,3 +1,5 @@
+@import "../../assets/styles/mixins.scss";
+
 .footer-container {
   background-color: #000;
   height: 210px;
@@ -5,7 +7,7 @@
   align-items: center;
   justify-content: center;
 
-  @media (max-width: 768px) {
+  @include mobile {
     margin-top: 25px;
   }
 
@@ -16,7 +18,7 @@
     align-items: center;
     justify-content: space-around;
 
-    @media (max-width: 768px) {
+    @include mobile {
       justify-content: center;
     }
 
@@ -30,7 +32,7 @@
       font-size: 1.3rem;
       font-weight: 500;
 
-      @media (max-width: 768px) {
+      @include mobile {
         font-size: 0.7rem;
         width: 122px;
         text-align: center;

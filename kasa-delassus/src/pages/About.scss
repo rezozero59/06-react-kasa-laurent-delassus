@@ -1,7 +1,9 @@
+@import "../assets/styles/mixins.scss";
+
 .about-container {
   margin-bottom: 40px;
 
-  @media (max-width: 768px) {
+  @include mobile {
     margin-bottom: 0px;
   }
   .about-collapse-container {
@@ -10,7 +12,7 @@
     gap: 25px;
     margin: 0px 50px;
 
-    @media (max-width: 768px) {
+    @include mobile {
       margin: 0px 20px;
     }
 
@@ -18,7 +20,7 @@
       padding: 0 85px 0 85px;
       line-height: 1.5;
 
-      @media (max-width: 768px) {
+      @include mobile {
         padding: 0px;
         font-weight: 400;
       }

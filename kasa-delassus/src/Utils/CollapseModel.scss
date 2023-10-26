@@ -18,7 +18,7 @@
     padding: 10px;
     padding-left: 15px;
 
-    @media (max-width: 768px) {
+    @include mobile {
       font-size: 1rem;
       font-weight: 400;
       height: 40px;
@@ -48,9 +48,7 @@
       opacity: 0;
       z-index: -1;
       top: $collapse_header-height;
-      padding-top: 10px;
-      padding-left: 20px;
-      padding-right: 20px;
+      padding: 10px 20px 0 20px;
       transform: translateY(-100%); // initialement caché en dessous
       transition: all 0.4s ease;
 

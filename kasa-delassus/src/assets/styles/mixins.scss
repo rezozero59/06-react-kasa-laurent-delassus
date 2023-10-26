@@ -11,14 +11,6 @@
   transform: translate(-50%, -50%);
 }
 
-@mixin adaptive-image($default-height, $mobile-height) {
-  height: $default-height;
-
-  @include mobile {
-    height: $mobile-height;
-  }
-}
-
 @mixin flexbox($direction: row, $justify: center, $align: center) {
   display: flex;
   flex-direction: $direction;
@@ -26,50 +18,17 @@
   align-items: $align;
 }
 
-@mixin xs {
-  @media (max-width: 576px) {
-    @content;
-  }
-}
-
-@mixin sm {
-  @media (min-width: 577px) and (max-width: 768px) {
-    @content;
-  }
-}
-
-@mixin sm-lt {
-  @media (max-width: 768px) {
-    @content;
-  }
-}
-
-@mixin md {
-  @media (min-width: 769px) and (max-width: 992px) {
-    @content;
-  }
-}
-
-@mixin md-lt {
-  @media (max-width: 992px) {
-    @content;
-  }
-}
-
-@mixin lg {
-  @media (min-width: 993px) and (max-width: 1200px) {
-    @content;
-  }
-}
-
-@mixin lg-lt {
-  @media (max-width: 1200px) {
-    @content;
-  }
-}
-
-@mixin xl {
-  @media (min-width: 1201px) {
-    @content;
-  }
+@mixin box-shadow {
+  background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.5) 0%,
+      rgba(0, 0, 0, 0) 20%,
+      rgba(0, 0, 0, 0) 100%
+    ),
+    radial-gradient(
+      circle,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.2) 80%,
+      rgba(0, 0, 0, 0.8) 120%
+    );
 }
