@@ -1,21 +1,28 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import "./Product.scss";
 import SlideShow from "../Utils/SlideShow";
 import useFetch from "../hooks/usefetch";
-import ErrorPage from "./ErrorPage";
+// import ErrorPage from "./ErrorPage";
 import ProductCollapses from "../components/Product-elements/ProductCollapses";
 import ProductHostRating from "../components/Product-elements/ProductHostRating";
 import ProductTitleTags from "../components/Product-elements/ProductTitleTags";
 
 const Product = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const { data, loading, error } = useFetch("/data.json");
   const appart = data?.find((element) => element.id === id);
 
+  useEffect(() => {
+    if (data && (error || !data.find((element) => element.id === id))) {
+      navigate("/error");
+    }
+  }, [data, error, id, navigate]);
+
   if (loading) return <div>Loading ...</div>;
-  if (error) return <div>Error: {error}</div>;
-  if (!appart) return <ErrorPage />;
+  if (error || !appart) return null; // Ajouté pour prévenir le rendu du composant si une redirection est en cours
 
   return (
     <div className="product-container">
