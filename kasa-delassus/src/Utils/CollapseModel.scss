@@ -45,20 +45,23 @@
       font-weight: 400;
       border-radius: 0 0 5px 5px;
       width: 100%;
-      transition: all 0.5s ease;
       opacity: 0;
       z-index: -1;
       top: $collapse_header-height;
       padding-top: 10px;
+      padding-left: 20px;
+      padding-right: 20px;
+      transform: translateY(-100%); // initialement caché en dessous
+      transition: all 0.4s ease;
 
       &.open {
         height: auto;
-        padding-left: 20px;
-        padding-right: 20px;
+
         padding-top: $collapse_header-height;
         padding-bottom: $collapse_header-height;
         opacity: 1;
-        transition: all 0.5s ease;
+        transform: translateY(0); // affiché quand ouvert
+        transition: all 0.4s ease;
       }
     }
   }
