@@ -2,7 +2,10 @@ import React from "react";
 import StarsRating from "../../Utils/StarsRating";
 import "../../pages/Product.scss";
 
+// Composant pour le nom et la note du loueur
+
 function ProductHostRating({ appart }) {
+  // Découpage du nom du loueur pour afficher séparément le prénom du nom
   const [firstName, lastName] = appart.host.name.split(" ");
 
   return (
@@ -16,11 +19,7 @@ function ProductHostRating({ appart }) {
         <img src={appart.host.picture} alt="nom du loueur" />
       </div>
       <div className="ratings-container">
-        <StarsRating
-          rating={appart.rating}
-          // activeStar={starActive}
-          // inactiveStar={starInactive}
-        />
+        <StarsRating rating={appart.rating} />
       </div>
     </div>
   );

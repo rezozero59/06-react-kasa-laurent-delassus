@@ -1,6 +1,8 @@
 import React from "react";
 import "../../pages/Product.scss";
 
+// Composant pour le titre et les tags des appartements
+
 function ProductTitleTags({ appart }) {
   return (
     <div className="title-tags-container">

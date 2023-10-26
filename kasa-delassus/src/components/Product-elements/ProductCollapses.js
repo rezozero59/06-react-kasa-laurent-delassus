@@ -2,6 +2,8 @@ import React from "react";
 import CollapseModel from "../../Utils/CollapseModel";
 import "../../pages/Product.scss";
 
+// Composant pour les collapses de description et d'équipements des appartements
+
 function ProductCollapses({ appart }) {
   const equipmentList = appart.equipments.map((equipment, index) => (
     <li key={index}>{equipment}</li>

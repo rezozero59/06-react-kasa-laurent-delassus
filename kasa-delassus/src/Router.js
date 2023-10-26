@@ -11,7 +11,8 @@ function Router() {
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
       <Route path="/appartement/:id" element={<Product />} />
-      <Route path="/appartement/*" element={<ErrorPage />} />
+      {/* <Route path="/appartement/*" element={<ErrorPage />} /> */}
+      {/* l'erreur sur l'id est géré par useNavigate */}
       <Route path="/*" element={<ErrorPage />} />
     </Routes>
   );

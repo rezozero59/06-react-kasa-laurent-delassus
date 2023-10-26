@@ -3,10 +3,15 @@ import "./SlideShow.scss";
 import left from "../assets/images/utils/left-arrow.png";
 import right from "../assets/images/utils/right-arrow.png";
 
+// Composant pour le slideshow des images des locations
+
 function SlideShow({ images }) {
+  // Index sur l'image actuelle
   const [currentIndex, setCurrentIndex] = useState(0);
+  // Etat pour la transition
   const [isFading, setIsFading] = useState(false);
 
+  // Affichage des flèches si plus d'une image
   const showArrows = images.length > 1;
 
   const handleNext = () => {
@@ -52,7 +57,7 @@ function SlideShow({ images }) {
           </button>
         )}
         <div className="slide-show-index">
-          {showArrows && currentIndex + 1}/{showArrows && images.length}
+          {showArrows && `${currentIndex + 1} / ${images.length}`}
         </div>
       </div>
     </div>

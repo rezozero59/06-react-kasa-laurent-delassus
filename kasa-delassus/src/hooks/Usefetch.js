@@ -5,6 +5,8 @@ const useFetch = (url) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  // Custom Hook pour récupérer les données de l'API qui sera utilisé dans les composants Product et Home. Données stockées dans le fichier data.json en attendant l'API.
+
   useEffect(() => {
     const fetchData = async () => {
       try {

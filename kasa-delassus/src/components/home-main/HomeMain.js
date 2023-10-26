@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 
 import useFetch from "../../hooks/usefetch";
 
+// Composant qui liste et affiche les locations sur la page d'accueil
+
 function HomeMain() {
   const { data, loading, error } = useFetch("/data.json");
 

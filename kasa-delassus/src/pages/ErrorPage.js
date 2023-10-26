@@ -2,6 +2,8 @@ import React from "react";
 import "./ErrorPage.scss";
 import { NavLink } from "react-router-dom";
 
+// Composant pour la page d'erreur 404
+
 function ErrorPage() {
   return (
     <div className="error-container">
